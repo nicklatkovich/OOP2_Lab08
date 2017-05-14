@@ -23,10 +23,11 @@ namespace OOP2.Lab07 {
             this.label2 = new System.Windows.Forms.Label();
             this.ButtonAddAnimal = new System.Windows.Forms.Button();
             this.GroupBoxAddAnimal = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.ButtonEditHabitats = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -50,11 +51,10 @@ namespace OOP2.Lab07 {
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.GroupBoxAddAnimal.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +73,7 @@ namespace OOP2.Lab07 {
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 17);
+            this.label2.Location = new System.Drawing.Point(38, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 26);
             this.label2.TabIndex = 1;
@@ -109,56 +109,71 @@ namespace OOP2.Lab07 {
             this.GroupBoxAddAnimal.Controls.Add(this.label2);
             this.GroupBoxAddAnimal.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GroupBoxAddAnimal.ForeColor = System.Drawing.Color.White;
-            this.GroupBoxAddAnimal.Location = new System.Drawing.Point(219, 78);
+            this.GroupBoxAddAnimal.Location = new System.Drawing.Point(195, 12);
             this.GroupBoxAddAnimal.Name = "GroupBoxAddAnimal";
-            this.GroupBoxAddAnimal.Size = new System.Drawing.Size(561, 439);
+            this.GroupBoxAddAnimal.Size = new System.Drawing.Size(737, 577);
             this.GroupBoxAddAnimal.TabIndex = 3;
             this.GroupBoxAddAnimal.TabStop = false;
             this.GroupBoxAddAnimal.Text = "Addition of a new animal";
             // 
-            // button1
+            // groupBox1
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(336, 356);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 32);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Confirm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(78, 97);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(96, 32);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Edit";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(56, 54);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(118, 26);
-            this.label17.TabIndex = 22;
-            this.label17.Text = "Area: 0 km2";
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.ButtonEditHabitats);
+            this.groupBox1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(406, 272);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(296, 142);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Habitats";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(56, 17);
+            this.label16.Location = new System.Drawing.Point(93, 17);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 26);
             this.label16.TabIndex = 21;
             this.label16.Text = "Count: 0";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(57, 59);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(164, 26);
+            this.label17.TabIndex = 22;
+            this.label17.Text = "Total Area: 0 km2";
+            // 
+            // ButtonEditHabitats
+            // 
+            this.ButtonEditHabitats.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonEditHabitats.ForeColor = System.Drawing.Color.Black;
+            this.ButtonEditHabitats.Location = new System.Drawing.Point(112, 97);
+            this.ButtonEditHabitats.Name = "ButtonEditHabitats";
+            this.ButtonEditHabitats.Size = new System.Drawing.Size(96, 32);
+            this.ButtonEditHabitats.TabIndex = 18;
+            this.ButtonEditHabitats.Text = "Edit";
+            this.ButtonEditHabitats.UseVisualStyleBackColor = true;
+            this.ButtonEditHabitats.Click += new System.EventHandler(this.ButtonEditHabitats_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(435, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(235, 68);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Confirm";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -168,9 +183,9 @@ namespace OOP2.Lab07 {
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(11, 345);
+            this.groupBox3.Location = new System.Drawing.Point(33, 436);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(285, 82);
+            this.groupBox3.Size = new System.Drawing.Size(319, 122);
             this.groupBox3.TabIndex = 19;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Responsible person";
@@ -180,7 +195,7 @@ namespace OOP2.Lab07 {
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.textBox5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox5.ForeColor = System.Drawing.Color.Lime;
-            this.textBox5.Location = new System.Drawing.Point(118, 45);
+            this.textBox5.Location = new System.Drawing.Point(134, 68);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(161, 27);
             this.textBox5.TabIndex = 23;
@@ -190,7 +205,7 @@ namespace OOP2.Lab07 {
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(6, 43);
+            this.label14.Location = new System.Drawing.Point(22, 66);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(103, 26);
             this.label14.TabIndex = 22;
@@ -201,7 +216,7 @@ namespace OOP2.Lab07 {
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.textBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox4.ForeColor = System.Drawing.Color.Lime;
-            this.textBox4.Location = new System.Drawing.Point(118, 19);
+            this.textBox4.Location = new System.Drawing.Point(134, 35);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(161, 27);
             this.textBox4.TabIndex = 21;
@@ -211,7 +226,7 @@ namespace OOP2.Lab07 {
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(6, 17);
+            this.label13.Location = new System.Drawing.Point(22, 33);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(106, 26);
             this.label13.TabIndex = 20;
@@ -228,9 +243,9 @@ namespace OOP2.Lab07 {
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(11, 197);
+            this.groupBox2.Location = new System.Drawing.Point(33, 272);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(285, 142);
+            this.groupBox2.Size = new System.Drawing.Size(317, 142);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Animal\'s Kind";
@@ -239,7 +254,7 @@ namespace OOP2.Lab07 {
             // 
             this.button2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(95, 97);
+            this.button2.Location = new System.Drawing.Point(111, 97);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(96, 32);
             this.button2.TabIndex = 4;
@@ -316,9 +331,9 @@ namespace OOP2.Lab07 {
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 164);
+            this.dateTimePicker1.Location = new System.Drawing.Point(554, 76);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(139, 27);
             this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.Value = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
             // 
@@ -327,7 +342,7 @@ namespace OOP2.Lab07 {
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(6, 165);
+            this.label6.Location = new System.Drawing.Point(559, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 26);
             this.label6.TabIndex = 10;
@@ -337,7 +352,7 @@ namespace OOP2.Lab07 {
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(465, 92);
+            this.radioButton2.Location = new System.Drawing.Point(554, 207);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(82, 23);
             this.radioButton2.TabIndex = 9;
@@ -349,7 +364,7 @@ namespace OOP2.Lab07 {
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(465, 74);
+            this.radioButton1.Location = new System.Drawing.Point(554, 189);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(54, 23);
             this.radioButton1.TabIndex = 8;
@@ -362,7 +377,7 @@ namespace OOP2.Lab07 {
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(460, 45);
+            this.label5.Location = new System.Drawing.Point(549, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 26);
             this.label5.TabIndex = 7;
@@ -373,7 +388,7 @@ namespace OOP2.Lab07 {
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.textBox3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox3.ForeColor = System.Drawing.Color.Lime;
-            this.textBox3.Location = new System.Drawing.Point(358, 19);
+            this.textBox3.Location = new System.Drawing.Point(390, 30);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(84, 27);
             this.textBox3.TabIndex = 6;
@@ -383,7 +398,7 @@ namespace OOP2.Lab07 {
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(306, 17);
+            this.label4.Location = new System.Drawing.Point(338, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 26);
             this.label4.TabIndex = 5;
@@ -394,11 +409,11 @@ namespace OOP2.Lab07 {
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.textBox2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.ForeColor = System.Drawing.Color.Lime;
-            this.textBox2.Location = new System.Drawing.Point(6, 79);
+            this.textBox2.Location = new System.Drawing.Point(33, 105);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(436, 79);
+            this.textBox2.Size = new System.Drawing.Size(466, 140);
             this.textBox2.TabIndex = 4;
             // 
             // label3
@@ -406,7 +421,7 @@ namespace OOP2.Lab07 {
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(6, 50);
+            this.label3.Location = new System.Drawing.Point(218, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 26);
             this.label3.TabIndex = 3;
@@ -417,24 +432,10 @@ namespace OOP2.Lab07 {
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.textBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.Lime;
-            this.textBox1.Location = new System.Drawing.Point(76, 19);
+            this.textBox1.Location = new System.Drawing.Point(108, 30);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(220, 27);
             this.textBox1.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(311, 164);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(236, 142);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Habitats";
             // 
             // MainForm
             // 
@@ -445,17 +446,18 @@ namespace OOP2.Lab07 {
             this.Controls.Add(this.GroupBoxAddAnimal);
             this.Controls.Add(this.ButtonAddAnimal);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zoo";
             this.GroupBoxAddAnimal.ResumeLayout(false);
             this.GroupBoxAddAnimal.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,7 +487,7 @@ namespace OOP2.Lab07 {
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button ButtonEditHabitats;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox groupBox3;

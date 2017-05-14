@@ -15,12 +15,19 @@ namespace OOP2.Lab07 {
             Load += MainForm_Load;
         }
 
+        private HabitatsForm HabitatsForm = new HabitatsForm( );
+
         private void MainForm_Load(Object sender, EventArgs e) {
             GroupBoxAddAnimal.Visible = false;
         }
 
         private void ButtonAddAnimal_Click(Object sender, EventArgs e) {
             GroupBoxAddAnimal.Visible = true;
+        }
+
+        private void ButtonEditHabitats_Click(Object sender, EventArgs e) {
+            HabitatsForm.Show( );
+            HabitatsForm.Focus( );
         }
     }
 }
