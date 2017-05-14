@@ -12,6 +12,15 @@ namespace OOP2.Lab07 {
     public partial class MainForm : Form {
         public MainForm( ) {
             InitializeComponent( );
+            Load += MainForm_Load;
+        }
+
+        private void MainForm_Load(Object sender, EventArgs e) {
+            GroupBoxAddAnimal.Visible = false;
+        }
+
+        private void ButtonAddAnimal_Click(Object sender, EventArgs e) {
+            GroupBoxAddAnimal.Visible = true;
         }
     }
 }

@@ -5,19 +5,11 @@ namespace OOP2.Lab07 {
     partial class MainForm {
         private System.ComponentModel.IContainer components = null;
 
-        public Point GroupBoxAddAnimalTargetPosition;
-
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose( );
             }
             base.Dispose(disposing);
-        }
-
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-            /*
-            GroupBoxAddAnimal.Location = GroupBoxAddAnimalTargetPosition = GroupBoxAddAnimal.Location.Add(new Point(0, this.Height));*/
         }
 
         #region Windows Form Designer generated code
@@ -96,6 +88,7 @@ namespace OOP2.Lab07 {
             this.ButtonAddAnimal.TabIndex = 2;
             this.ButtonAddAnimal.Text = "Add Animal";
             this.ButtonAddAnimal.UseVisualStyleBackColor = true;
+            this.ButtonAddAnimal.Click += new System.EventHandler(this.ButtonAddAnimal_Click);
             // 
             // GroupBoxAddAnimal
             // 
