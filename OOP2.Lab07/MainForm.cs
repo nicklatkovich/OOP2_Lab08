@@ -43,6 +43,10 @@ namespace OOP2.Lab07 {
         }
 
         private void BtnRefresh_Click(Object sender, EventArgs e) {
+            RefreshZooPresenter( );
+        }
+
+        public void RefreshZooPresenter( ) {
             ZooPresenter.Rows.Clear( );
             foreach (var a in Animals) {
                 ZooPresenter.Rows.Add(new string[ ] {
@@ -77,6 +81,7 @@ namespace OOP2.Lab07 {
                     Animals = new List<Animal>((Animal[ ])jsonFormatter.ReadObject(fs));
                 }
             }
+            RefreshZooPresenter( );
         }
     }
 }

@@ -47,6 +47,9 @@ namespace OOP2.Lab07 {
             animal.Bailee = new Person(TextBoxAddPerson1Name.Text, TextBoxAddPerson2Name.Text);
             animal.ReceiptDate = DateTimePickerAdd.Value;
             Program.MainForm.Animals.Add(animal);
+            Program.MainForm.RefreshZooPresenter( );
+            this.Hide( );
+            Program.MainForm.Focus( );
         }
     }
 }
