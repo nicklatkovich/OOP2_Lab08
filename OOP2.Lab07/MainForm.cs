@@ -9,6 +9,8 @@ namespace OOP2.Lab07 {
         public MainForm( ) {
             InitializeComponent( );
             Load += MainForm_Load;
+            ZooPresenter.Columns.Add("Animal", "Животное");
+            ZooPresenter.Columns[0].Visible = false;
             ZooPresenter.Columns.Add("Name", "Название");
             ZooPresenter.Columns.Add("Age", "Возраст");
             ZooPresenter.Columns.Add("RedBook", "Красная книга");
@@ -20,14 +22,14 @@ namespace OOP2.Lab07 {
 
         public List<Animal> Animals = new List<Animal>( );
 
-        private EditAnimalForm AddAnimalForm = new EditAnimalForm(new Animal( ));
+        private EditAnimalForm AddAnimalForm;
 
         private void MainForm_Load(Object sender, EventArgs e) {
         }
 
         private void ButtonAddAnimal_Click(Object sender, EventArgs e) {
-            if (AddAnimalForm.IsDisposed) {
-                AddAnimalForm = new EditAnimalForm(new Animal( ));
+            if (AddAnimalForm == null || AddAnimalForm.IsDisposed) {
+                AddAnimalForm = new EditAnimalForm(null);
             }
             AddAnimalForm.Show( );
             AddAnimalForm.Focus( );
@@ -49,16 +51,18 @@ namespace OOP2.Lab07 {
         public void RefreshZooPresenter( ) {
             ZooPresenter.Rows.Clear( );
             foreach (var a in Animals) {
-                ZooPresenter.Rows.Add(new string[ ] {
+                ZooPresenter.Rows.Add(new object[ ] {
+                    a,
                     a.Name,
-                    a.Age.ToString( ),
-                    a.IsInRedBook.ToString( ),
+                    a.Age,
+                    a.IsInRedBook,
                     a.Type,
                     a.Class,
                     a.Detachment,
-                    a.GetCommonHabitatsArea( ).ToString( ),
+                    a.GetCommonHabitatsArea( ),
                 });
             }
+            ZooPresenter.ClearSelection( );
         }
 
         private void BtnSave_Click(Object sender, EventArgs e) {
@@ -84,7 +88,26 @@ namespace OOP2.Lab07 {
             RefreshZooPresenter( );
         }
 
-        private void ZooPresenter_RowDividerDoubleClick(Object sender, DataGridViewRowDividerDoubleClickEventArgs e) {
+        private void ZooPresenter_MouseDoubleClick(Object sender, MouseEventArgs e) {
+        }
+
+        private void ZooPresenter_Sorted(Object sender, EventArgs e) {
+            ZooPresenter.ClearSelection( );
+        }
+
+        private void ZooPresenter_SelectionChanged(Object sender, EventArgs e) {
+            BtnEdit.Visible = ZooPresenter.SelectedRows.Count == 1;
+        }
+
+        private void BtnEdit_Click(Object sender, EventArgs e) {
+            Animal animal = ZooPresenter.SelectedRows[0].Cells[0].Value as Animal;
+            if (AddAnimalForm == null || AddAnimalForm.IsDisposed) {
+                AddAnimalForm = new EditAnimalForm(animal);
+            }
+            ZooPresenter.Enabled = false;
+            AddAnimalForm.Show( );
+            AddAnimalForm.Focus( );
+            //AddAnimalForm.LabelClass.Text = AddAnimalForm.LabelType.Text = AddAnimalForm.LabelDetachment.Text = "";
         }
     }
 }

@@ -14,13 +14,43 @@ namespace OOP2.Lab07 {
         public EditAnimalForm(Animal animal) {
             InitializeComponent( );
             AnimalKindForm = new AnimalKindForm(this);
-            this.Animal = animal;
-            TextBoxNameAdd.BackColor = Program.ErrorBackColor;
-            TextBoxAddAge.BackColor = Program.ErrorBackColor;
-            DateTimePickerAdd.Value = DateTime.Now;
-            TextBoxAddPerson1Name.BackColor = Program.ErrorBackColor;
-            TextBoxAddPerson2Name.BackColor = Program.ErrorBackColor;
+            isNew = animal == null;
+            if (isNew) {
+                this.Animal = new Animal( );
+                TextBoxNameAdd.BackColor = Program.ErrorBackColor;
+                TextBoxAddAge.BackColor = Program.ErrorBackColor;
+                DateTimePickerAdd.Value = DateTime.Now;
+                TextBoxAddPerson1Name.BackColor = Program.ErrorBackColor;
+                TextBoxAddPerson2Name.BackColor = Program.ErrorBackColor;
+            } else {
+                this.Animal = animal;
+                TextBoxNameAdd.Text = Animal.Name;
+                TextBoxAddAge.Text = Animal.Age.ToString( );
+                TextBoxAddDescription.Text = Animal.Description;
+                DateTimePickerAdd.Value = Animal.ReceiptDate;
+                (Animal.IsInRedBook ? RadioButtonIsIn : RadioButtonIsNotIn).Checked = true;
+                LabelType.Text = Animal.Type;
+                LabelClass.Text = Animal.Class;
+                LabelDetachment.Text = Animal.Detachment;
+                TextBoxAddPerson1Name.Text = Animal.Bailee.FirstName;
+                TextBoxAddPerson2Name.Text = Animal.Bailee.LastName;
+                UpdateHabitats( );
+            }
         }
+
+        public void UpdateHabitats( ) {
+            uint count = 0u;
+            float totalArea = 0f;
+            foreach (var a in Animal.Habitats) {
+                count++;
+                totalArea += a.Area;
+            }
+            LabelHabitatsNumber.Text = "Зон: " + count;
+            LabelHabitatsArea.Text = "Площадь: " + totalArea + " км2";
+
+        }
+
+        bool isNew;
 
         bool NameError = true;
         bool AgeError = true;
@@ -68,7 +98,9 @@ namespace OOP2.Lab07 {
                 MessageBox.Show("Имя и/или фамилия ответственного лица введены неверно");
                 return;
             }
-            Program.MainForm.Animals.Add(Animal);
+            if (isNew) {
+                Program.MainForm.Animals.Add(Animal);
+            }
             Program.MainForm.RefreshZooPresenter( );
             Program.MainForm.Focus( );
             this.Close( );
@@ -165,6 +197,10 @@ namespace OOP2.Lab07 {
 
         private void DateTimePickerAdd_ValueChanged(Object sender, EventArgs e) {
             Animal.ReceiptDate = DateTimePickerAdd.Value;
+        }
+
+        private void EditAnimalForm_FormClosing(Object sender, FormClosingEventArgs e) {
+            Program.MainForm.ZooPresenter.Enabled = true;
         }
     }
 }

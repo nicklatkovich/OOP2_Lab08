@@ -404,7 +404,7 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Название";
             // 
-            // AddAnimalForm
+            // EditAnimalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -425,8 +425,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TextBoxNameAdd);
             this.Controls.Add(this.label2);
-            this.Name = "AddAnimalForm";
+            this.Name = "EditAnimalForm";
             this.Text = "Редактор животного";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditAnimalForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

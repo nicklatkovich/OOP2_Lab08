@@ -73,18 +73,13 @@ namespace OOP2.Lab07 {
         }
 
         private void UpdateMainForm( ) {
-            uint count = 0u;
-            float totalArea = 0f;
             EditAnimalForm.Animal.Habitats = new List<Habitat>( );
             foreach (var a in ListBoxHabitats.Items) {
                 if (a is Habitat) {
-                    count++;
-                    totalArea += (a as Habitat).Area;
                     EditAnimalForm.Animal.Habitats.Add(a as Habitat);
                 }
             }
-            EditAnimalForm.LabelHabitatsNumber.Text = "Зон: " + count;
-            EditAnimalForm.LabelHabitatsArea.Text = "Площадь: " + totalArea + " км2";
+            EditAnimalForm.UpdateHabitats( );
         }
 
         private void ButtonDelete_Click(Object sender, EventArgs e) {

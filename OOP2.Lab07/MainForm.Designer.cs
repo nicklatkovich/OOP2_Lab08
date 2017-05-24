@@ -19,13 +19,15 @@ namespace OOP2.Lab07 {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent( ) {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.ButtonAddAnimal = new System.Windows.Forms.Button();
             this.ZooPresenter = new System.Windows.Forms.DataGridView();
             this.BtnRefresh = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.BtnLoad = new System.Windows.Forms.Button();
+            this.BtnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ZooPresenter)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,27 +57,39 @@ namespace OOP2.Lab07 {
             // 
             this.ZooPresenter.AllowUserToAddRows = false;
             this.ZooPresenter.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Red;
-            this.ZooPresenter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Red;
+            this.ZooPresenter.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.ZooPresenter.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ZooPresenter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ZooPresenter.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ZooPresenter.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ZooPresenter.DefaultCellStyle = dataGridViewCellStyle4;
             this.ZooPresenter.Location = new System.Drawing.Point(196, 50);
             this.ZooPresenter.MultiSelect = false;
             this.ZooPresenter.Name = "ZooPresenter";
             this.ZooPresenter.ReadOnly = true;
+            this.ZooPresenter.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.ZooPresenter.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.ZooPresenter.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ZooPresenter.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Lime;
-            this.ZooPresenter.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.ZooPresenter.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Lime;
+            this.ZooPresenter.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Silver;
+            this.ZooPresenter.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Red;
+            this.ZooPresenter.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ZooPresenter.Size = new System.Drawing.Size(736, 539);
             this.ZooPresenter.TabIndex = 3;
-            this.ZooPresenter.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.ZooPresenter_RowDividerDoubleClick);
+            this.ZooPresenter.SelectionChanged += new System.EventHandler(this.ZooPresenter_SelectionChanged);
+            this.ZooPresenter.Sorted += new System.EventHandler(this.ZooPresenter_Sorted);
+            this.ZooPresenter.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ZooPresenter_MouseDoubleClick);
             // 
             // BtnRefresh
             // 
@@ -91,7 +105,7 @@ namespace OOP2.Lab07 {
             // BtnSave
             // 
             this.BtnSave.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnSave.Location = new System.Drawing.Point(12, 154);
+            this.BtnSave.Location = new System.Drawing.Point(12, 225);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Size = new System.Drawing.Size(172, 32);
             this.BtnSave.TabIndex = 5;
@@ -102,7 +116,7 @@ namespace OOP2.Lab07 {
             // BtnLoad
             // 
             this.BtnLoad.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BtnLoad.Location = new System.Drawing.Point(12, 192);
+            this.BtnLoad.Location = new System.Drawing.Point(12, 263);
             this.BtnLoad.Name = "BtnLoad";
             this.BtnLoad.Size = new System.Drawing.Size(172, 32);
             this.BtnLoad.TabIndex = 6;
@@ -110,12 +124,25 @@ namespace OOP2.Lab07 {
             this.BtnLoad.UseVisualStyleBackColor = true;
             this.BtnLoad.Click += new System.EventHandler(this.BtnLoad_Click);
             // 
+            // BtnEdit
+            // 
+            this.BtnEdit.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BtnEdit.Location = new System.Drawing.Point(12, 154);
+            this.BtnEdit.Name = "BtnEdit";
+            this.BtnEdit.Size = new System.Drawing.Size(172, 32);
+            this.BtnEdit.TabIndex = 7;
+            this.BtnEdit.Text = "Изменить";
+            this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Visible = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(944, 601);
+            this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnLoad);
             this.Controls.Add(this.BtnSave);
             this.Controls.Add(this.BtnRefresh);
@@ -136,10 +163,11 @@ namespace OOP2.Lab07 {
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ButtonAddAnimal;
-        private System.Windows.Forms.DataGridView ZooPresenter;
+        public System.Windows.Forms.DataGridView ZooPresenter;
         private System.Windows.Forms.Button BtnRefresh;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.Button BtnLoad;
+        private System.Windows.Forms.Button BtnEdit;
     }
 }
 
