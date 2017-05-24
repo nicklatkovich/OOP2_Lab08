@@ -20,14 +20,14 @@ namespace OOP2.Lab07 {
 
         public List<Animal> Animals = new List<Animal>( );
 
-        private AddAnimalForm AddAnimalForm = new AddAnimalForm( );
+        private AddAnimalForm AddAnimalForm = new AddAnimalForm(new Animal( ));
 
         private void MainForm_Load(Object sender, EventArgs e) {
         }
 
         private void ButtonAddAnimal_Click(Object sender, EventArgs e) {
             if (AddAnimalForm.IsDisposed) {
-                AddAnimalForm = new AddAnimalForm( );
+                AddAnimalForm = new AddAnimalForm(new Animal( ));
             }
             AddAnimalForm.Show( );
             AddAnimalForm.Focus( );
@@ -82,6 +82,9 @@ namespace OOP2.Lab07 {
                 }
             }
             RefreshZooPresenter( );
+        }
+
+        private void ZooPresenter_RowDividerDoubleClick(Object sender, DataGridViewRowDividerDoubleClickEventArgs e) {
         }
     }
 }

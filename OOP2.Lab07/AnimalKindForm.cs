@@ -82,6 +82,7 @@ namespace OOP2.Lab07 {
             }
             ComboBoxDetachment.Visible = false;
             LabelDetachment.Visible = false;
+            AddAnimalForm.LabelClass.Text = AddAnimalForm.LabelDetachment.Text = "";
         }
 
         private void ComboBoxClasses_SelectedIndexChanged(Object sender, EventArgs e) {

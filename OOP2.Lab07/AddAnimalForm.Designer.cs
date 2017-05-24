@@ -24,9 +24,9 @@
         /// </summary>
         private void InitializeComponent( ) {
             this.ButtonHabitatsEdit = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.LabelTypeT = new System.Windows.Forms.Label();
             this.LabelDetachment = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.LabelClassT = new System.Windows.Forms.Label();
             this.LabelClass = new System.Windows.Forms.Label();
             this.LabelType = new System.Windows.Forms.Label();
             this.TextBoxAddPerson2Name = new System.Windows.Forms.TextBox();
@@ -36,7 +36,7 @@
             this.LabelHabitatsNumber = new System.Windows.Forms.Label();
             this.LabelHabitatsArea = new System.Windows.Forms.Label();
             this.ButtonEditHabitats = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.LabelDetachmentT = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ButtonConfirmAnimalAddition = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.RadioButtonIsNotIn = new System.Windows.Forms.RadioButton();
             this.RadioButtonIsIn = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.LblRB = new System.Windows.Forms.Label();
             this.TextBoxAddAge = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TextBoxAddDescription = new System.Windows.Forms.TextBox();
@@ -67,18 +67,18 @@
             this.ButtonHabitatsEdit.TabIndex = 4;
             this.ButtonHabitatsEdit.Text = "Изменить";
             this.ButtonHabitatsEdit.UseVisualStyleBackColor = true;
-            this.ButtonHabitatsEdit.Click += new System.EventHandler(this.ButtonHabitatsEdit_Click);
+            this.ButtonHabitatsEdit.Click += new System.EventHandler(this.ButtonKindEdit_Click);
             // 
-            // label7
+            // LabelTypeT
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(6, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 26);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Тип";
+            this.LabelTypeT.AutoSize = true;
+            this.LabelTypeT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelTypeT.ForeColor = System.Drawing.Color.White;
+            this.LabelTypeT.Location = new System.Drawing.Point(6, 17);
+            this.LabelTypeT.Name = "LabelTypeT";
+            this.LabelTypeT.Size = new System.Drawing.Size(44, 26);
+            this.LabelTypeT.TabIndex = 12;
+            this.LabelTypeT.Text = "Тип";
             // 
             // LabelDetachment
             // 
@@ -90,17 +90,18 @@
             this.LabelDetachment.Size = new System.Drawing.Size(23, 26);
             this.LabelDetachment.TabIndex = 17;
             this.LabelDetachment.Text = "q";
+            this.LabelDetachment.TextChanged += new System.EventHandler(this.LabelDetachment_TextChanged);
             // 
-            // label8
+            // LabelClassT
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(6, 43);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 26);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Класс";
+            this.LabelClassT.AutoSize = true;
+            this.LabelClassT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelClassT.ForeColor = System.Drawing.Color.White;
+            this.LabelClassT.Location = new System.Drawing.Point(6, 43);
+            this.LabelClassT.Name = "LabelClassT";
+            this.LabelClassT.Size = new System.Drawing.Size(63, 26);
+            this.LabelClassT.TabIndex = 13;
+            this.LabelClassT.Text = "Класс";
             // 
             // LabelClass
             // 
@@ -112,6 +113,7 @@
             this.LabelClass.Size = new System.Drawing.Size(23, 26);
             this.LabelClass.TabIndex = 16;
             this.LabelClass.Text = "q";
+            this.LabelClass.TextChanged += new System.EventHandler(this.LabelClass_TextChanged);
             // 
             // LabelType
             // 
@@ -123,6 +125,7 @@
             this.LabelType.Size = new System.Drawing.Size(23, 26);
             this.LabelType.TabIndex = 15;
             this.LabelType.Text = "q";
+            this.LabelType.TextChanged += new System.EventHandler(this.LabelType_TextChanged);
             // 
             // TextBoxAddPerson2Name
             // 
@@ -133,6 +136,7 @@
             this.TextBoxAddPerson2Name.Name = "TextBoxAddPerson2Name";
             this.TextBoxAddPerson2Name.Size = new System.Drawing.Size(172, 27);
             this.TextBoxAddPerson2Name.TabIndex = 23;
+            this.TextBoxAddPerson2Name.TextChanged += new System.EventHandler(this.TextBoxAddPerson2Name_TextChanged);
             // 
             // label14
             // 
@@ -154,6 +158,7 @@
             this.TextBoxAddPerson1Name.Name = "TextBoxAddPerson1Name";
             this.TextBoxAddPerson1Name.Size = new System.Drawing.Size(172, 27);
             this.TextBoxAddPerson1Name.TabIndex = 21;
+            this.TextBoxAddPerson1Name.TextChanged += new System.EventHandler(this.TextBoxAddPerson1Name_TextChanged);
             // 
             // label13
             // 
@@ -200,16 +205,16 @@
             this.ButtonEditHabitats.UseVisualStyleBackColor = true;
             this.ButtonEditHabitats.Click += new System.EventHandler(this.ButtonEditHabitats_Click);
             // 
-            // label9
+            // LabelDetachmentT
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(6, 68);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 26);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "Отряд";
+            this.LabelDetachmentT.AutoSize = true;
+            this.LabelDetachmentT.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LabelDetachmentT.ForeColor = System.Drawing.Color.White;
+            this.LabelDetachmentT.Location = new System.Drawing.Point(6, 68);
+            this.LabelDetachmentT.Name = "LabelDetachmentT";
+            this.LabelDetachmentT.Size = new System.Drawing.Size(67, 26);
+            this.LabelDetachmentT.TabIndex = 14;
+            this.LabelDetachmentT.Text = "Отряд";
             // 
             // groupBox1
             // 
@@ -255,11 +260,11 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.ButtonHabitatsEdit);
-            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.LabelTypeT);
             this.groupBox2.Controls.Add(this.LabelDetachment);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.LabelClassT);
             this.groupBox2.Controls.Add(this.LabelClass);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.LabelDetachmentT);
             this.groupBox2.Controls.Add(this.LabelType);
             this.groupBox2.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -272,13 +277,16 @@
             // 
             // DateTimePickerAdd
             // 
+            this.DateTimePickerAdd.CalendarForeColor = System.Drawing.Color.White;
+            this.DateTimePickerAdd.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.DateTimePickerAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.DateTimePickerAdd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DateTimePickerAdd.Location = new System.Drawing.Point(597, 91);
             this.DateTimePickerAdd.Name = "DateTimePickerAdd";
             this.DateTimePickerAdd.Size = new System.Drawing.Size(96, 27);
             this.DateTimePickerAdd.TabIndex = 34;
-            this.DateTimePickerAdd.Value = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerAdd.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.DateTimePickerAdd.ValueChanged += new System.EventHandler(this.DateTimePickerAdd_ValueChanged);
             // 
             // label6
             // 
@@ -294,16 +302,15 @@
             // RadioButtonIsNotIn
             // 
             this.RadioButtonIsNotIn.AutoSize = true;
-            this.RadioButtonIsNotIn.Checked = true;
             this.RadioButtonIsNotIn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RadioButtonIsNotIn.ForeColor = System.Drawing.Color.White;
             this.RadioButtonIsNotIn.Location = new System.Drawing.Point(561, 222);
             this.RadioButtonIsNotIn.Name = "RadioButtonIsNotIn";
             this.RadioButtonIsNotIn.Size = new System.Drawing.Size(51, 23);
             this.RadioButtonIsNotIn.TabIndex = 32;
-            this.RadioButtonIsNotIn.TabStop = true;
             this.RadioButtonIsNotIn.Text = "Нет";
             this.RadioButtonIsNotIn.UseVisualStyleBackColor = true;
+            this.RadioButtonIsNotIn.CheckedChanged += new System.EventHandler(this.RadioButtonIsIn_CheckedChanged);
             // 
             // RadioButtonIsIn
             // 
@@ -316,17 +323,18 @@
             this.RadioButtonIsIn.TabIndex = 31;
             this.RadioButtonIsIn.Text = "Да";
             this.RadioButtonIsIn.UseVisualStyleBackColor = true;
+            this.RadioButtonIsIn.CheckedChanged += new System.EventHandler(this.RadioButtonIsIn_CheckedChanged);
             // 
-            // label5
+            // LblRB
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(556, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 26);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Красная книга";
+            this.LblRB.AutoSize = true;
+            this.LblRB.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LblRB.ForeColor = System.Drawing.Color.Red;
+            this.LblRB.Location = new System.Drawing.Point(556, 175);
+            this.LblRB.Name = "LblRB";
+            this.LblRB.Size = new System.Drawing.Size(140, 26);
+            this.LblRB.TabIndex = 30;
+            this.LblRB.Text = "Красная книга";
             // 
             // TextBoxAddAge
             // 
@@ -337,6 +345,7 @@
             this.TextBoxAddAge.Name = "TextBoxAddAge";
             this.TextBoxAddAge.Size = new System.Drawing.Size(84, 27);
             this.TextBoxAddAge.TabIndex = 29;
+            this.TextBoxAddAge.TextChanged += new System.EventHandler(this.TextBoxAddAge_TextChanged);
             // 
             // label4
             // 
@@ -360,6 +369,7 @@
             this.TextBoxAddDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBoxAddDescription.Size = new System.Drawing.Size(475, 140);
             this.TextBoxAddDescription.TabIndex = 27;
+            this.TextBoxAddDescription.TextChanged += new System.EventHandler(this.TextBoxAddDescription_TextChanged);
             // 
             // label3
             // 
@@ -381,6 +391,7 @@
             this.TextBoxNameAdd.Name = "TextBoxNameAdd";
             this.TextBoxNameAdd.Size = new System.Drawing.Size(220, 27);
             this.TextBoxNameAdd.TabIndex = 25;
+            this.TextBoxNameAdd.TextChanged += new System.EventHandler(this.TextBoxNameAdd_TextChanged);
             // 
             // label2
             // 
@@ -407,7 +418,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.RadioButtonIsNotIn);
             this.Controls.Add(this.RadioButtonIsIn);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.LblRB);
             this.Controls.Add(this.TextBoxAddAge);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.TextBoxAddDescription);
@@ -430,33 +441,33 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonHabitatsEdit;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label LabelTypeT;
         public System.Windows.Forms.Label LabelDetachment;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label LabelClassT;
         public System.Windows.Forms.Label LabelClass;
         public System.Windows.Forms.Label LabelType;
-        private System.Windows.Forms.TextBox TextBoxAddPerson2Name;
+        public System.Windows.Forms.TextBox TextBoxAddPerson2Name;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TextBoxAddPerson1Name;
+        public System.Windows.Forms.TextBox TextBoxAddPerson1Name;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.Label LabelHabitatsNumber;
         public System.Windows.Forms.Label LabelHabitatsArea;
         private System.Windows.Forms.Button ButtonEditHabitats;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label LabelDetachmentT;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button ButtonConfirmAnimalAddition;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker DateTimePickerAdd;
+        public System.Windows.Forms.DateTimePicker DateTimePickerAdd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton RadioButtonIsNotIn;
-        private System.Windows.Forms.RadioButton RadioButtonIsIn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox TextBoxAddAge;
+        public System.Windows.Forms.RadioButton RadioButtonIsNotIn;
+        public System.Windows.Forms.RadioButton RadioButtonIsIn;
+        private System.Windows.Forms.Label LblRB;
+        public System.Windows.Forms.TextBox TextBoxAddAge;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TextBoxAddDescription;
+        public System.Windows.Forms.TextBox TextBoxAddDescription;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TextBoxNameAdd;
+        public System.Windows.Forms.TextBox TextBoxNameAdd;
         private System.Windows.Forms.Label label2;
     }
 }

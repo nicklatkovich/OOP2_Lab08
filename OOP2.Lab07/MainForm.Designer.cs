@@ -75,6 +75,7 @@ namespace OOP2.Lab07 {
             this.ZooPresenter.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Lime;
             this.ZooPresenter.Size = new System.Drawing.Size(736, 539);
             this.ZooPresenter.TabIndex = 3;
+            this.ZooPresenter.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.ZooPresenter_RowDividerDoubleClick);
             // 
             // BtnRefresh
             // 

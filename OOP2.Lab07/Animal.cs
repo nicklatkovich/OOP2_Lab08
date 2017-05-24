@@ -39,5 +39,9 @@ namespace OOP2.Lab07 {
             return result;
         }
 
+        public Animal( ) {
+            Bailee = new Person("", "");
+        }
+
     }
 }

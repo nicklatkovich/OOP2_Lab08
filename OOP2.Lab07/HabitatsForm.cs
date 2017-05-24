@@ -69,10 +69,12 @@ namespace OOP2.Lab07 {
         private void UpdateMainForm( ) {
             uint count = 0u;
             float totalArea = 0f;
+            AddAnimalForm.Animal.Habitats = new List<Habitat>( );
             foreach (var a in ListBoxHabitats.Items) {
                 if (a is Habitat) {
                     count++;
                     totalArea += (a as Habitat).Area;
+                    AddAnimalForm.Animal.Habitats.Add(a as Habitat);
                 }
             }
             AddAnimalForm.LabelHabitatsNumber.Text = "Зон: " + count;
@@ -85,8 +87,8 @@ namespace OOP2.Lab07 {
         }
 
         private void button1_Click(Object sender, EventArgs e) {
-            this.Hide( );
             AddAnimalForm.Focus( );
+            this.Close( );
         }
     }
 }
