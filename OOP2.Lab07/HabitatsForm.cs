@@ -15,6 +15,11 @@ namespace OOP2.Lab07 {
             InitializeComponent( );
             GroupBoxEdit.Visible = false;
             AddAnimalForm = addAnimalForm;
+            ListBoxHabitats.Items.Clear( );
+            foreach (var a in AddAnimalForm.Animal.Habitats) {
+                ListBoxHabitats.Items.Add(a);
+            }
+            ListBoxHabitats.Items.Add("Добавить");
         }
 
         private AddAnimalForm AddAnimalForm;
@@ -30,6 +35,7 @@ namespace OOP2.Lab07 {
                     TextBoxArea.Text = (ListBoxHabitats.SelectedItem as Habitat).Area.ToString( );
                 }
                 GroupBoxEdit.Visible = true;
+                UpdateMainForm( );
             }
         }
 
@@ -83,6 +89,7 @@ namespace OOP2.Lab07 {
 
         private void ButtonDelete_Click(Object sender, EventArgs e) {
             ListBoxHabitats.Items.RemoveAt(ListBoxHabitats.SelectedIndex);
+            UpdateMainForm( );
             GroupBoxEdit.Visible = false;
         }
 
