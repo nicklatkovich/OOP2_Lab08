@@ -11,18 +11,18 @@ using System.Windows.Forms;
 namespace OOP2.Lab07 {
     public partial class HabitatsForm : Form {
 
-        public HabitatsForm(AddAnimalForm addAnimalForm) {
+        public HabitatsForm(EditAnimalForm editAnimalForm) {
             InitializeComponent( );
             GroupBoxEdit.Visible = false;
-            AddAnimalForm = addAnimalForm;
+            EditAnimalForm = editAnimalForm;
             ListBoxHabitats.Items.Clear( );
-            foreach (var a in AddAnimalForm.Animal.Habitats) {
+            foreach (var a in EditAnimalForm.Animal.Habitats) {
                 ListBoxHabitats.Items.Add(a);
             }
             ListBoxHabitats.Items.Add("Добавить");
         }
 
-        private AddAnimalForm AddAnimalForm;
+        private EditAnimalForm EditAnimalForm;
 
         private void ListBox_SelectedIndexChanged(Object sender, EventArgs e) {
             if (ListBoxHabitats.SelectedIndex >= 0) {
@@ -75,16 +75,16 @@ namespace OOP2.Lab07 {
         private void UpdateMainForm( ) {
             uint count = 0u;
             float totalArea = 0f;
-            AddAnimalForm.Animal.Habitats = new List<Habitat>( );
+            EditAnimalForm.Animal.Habitats = new List<Habitat>( );
             foreach (var a in ListBoxHabitats.Items) {
                 if (a is Habitat) {
                     count++;
                     totalArea += (a as Habitat).Area;
-                    AddAnimalForm.Animal.Habitats.Add(a as Habitat);
+                    EditAnimalForm.Animal.Habitats.Add(a as Habitat);
                 }
             }
-            AddAnimalForm.LabelHabitatsNumber.Text = "Зон: " + count;
-            AddAnimalForm.LabelHabitatsArea.Text = "Площадь: " + totalArea + " км2";
+            EditAnimalForm.LabelHabitatsNumber.Text = "Зон: " + count;
+            EditAnimalForm.LabelHabitatsArea.Text = "Площадь: " + totalArea + " км2";
         }
 
         private void ButtonDelete_Click(Object sender, EventArgs e) {
@@ -94,7 +94,7 @@ namespace OOP2.Lab07 {
         }
 
         private void button1_Click(Object sender, EventArgs e) {
-            AddAnimalForm.Focus( );
+            EditAnimalForm.Focus( );
             this.Close( );
         }
     }

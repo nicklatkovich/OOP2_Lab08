@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OOP2.Lab07 {
-    public partial class AddAnimalForm : Form {
+    public partial class EditAnimalForm : Form {
 
-        public AddAnimalForm(Animal animal) {
+        public EditAnimalForm(Animal animal) {
             InitializeComponent( );
             AnimalKindForm = new AnimalKindForm(this);
             this.Animal = animal;

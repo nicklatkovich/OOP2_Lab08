@@ -20,14 +20,14 @@ namespace OOP2.Lab07 {
 
         public List<Animal> Animals = new List<Animal>( );
 
-        private AddAnimalForm AddAnimalForm = new AddAnimalForm(new Animal( ));
+        private EditAnimalForm AddAnimalForm = new EditAnimalForm(new Animal( ));
 
         private void MainForm_Load(Object sender, EventArgs e) {
         }
 
         private void ButtonAddAnimal_Click(Object sender, EventArgs e) {
             if (AddAnimalForm.IsDisposed) {
-                AddAnimalForm = new AddAnimalForm(new Animal( ));
+                AddAnimalForm = new EditAnimalForm(new Animal( ));
             }
             AddAnimalForm.Show( );
             AddAnimalForm.Focus( );

@@ -39,12 +39,12 @@ namespace OOP2.Lab07 {
             chordate.Add("Рыба");
         }
 
-        public AnimalKindForm(AddAnimalForm addAnimalForm) {
-            this.AddAnimalForm = addAnimalForm;
+        public AnimalKindForm(EditAnimalForm editAnimalForm) {
+            this.EditAnimalForm = editAnimalForm;
             InitializeComponent( );
         }
 
-        private AddAnimalForm AddAnimalForm;
+        private EditAnimalForm EditAnimalForm;
 
         private void button1_Click(Object sender, EventArgs e) {
             this.Visible = false;
@@ -63,9 +63,9 @@ namespace OOP2.Lab07 {
             LabelClass.Visible = false;
             ComboBoxDetachment.Visible = false;
             LabelDetachment.Visible = false;
-            string type = AddAnimalForm.LabelType.Text;
-            string @class = AddAnimalForm.LabelClass.Text;
-            string detachment = AddAnimalForm.LabelDetachment.Text;
+            string type = EditAnimalForm.LabelType.Text;
+            string @class = EditAnimalForm.LabelClass.Text;
+            string detachment = EditAnimalForm.LabelDetachment.Text;
             ComboBoxType.SelectedIndex = ComboBoxType.Items.IndexOf(type);
             ComboBoxClass.SelectedIndex = ComboBoxClass.Items.IndexOf(@class);
             ComboBoxDetachment.SelectedIndex = ComboBoxDetachment.Items.IndexOf(detachment);
@@ -74,7 +74,7 @@ namespace OOP2.Lab07 {
         private void ComboBoxType_SelectedIndexChanged(Object sender, EventArgs e) {
             if (ComboBoxType.SelectedIndex >= 0) {
                 Tree<string>[ ] types_tree = Animal.Children;
-                AddAnimalForm.LabelType.Text = types_tree[ComboBoxType.SelectedIndex].Data;
+                EditAnimalForm.LabelType.Text = types_tree[ComboBoxType.SelectedIndex].Data;
                 Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
                 if (classes_tree.Length == 0) {
                     ComboBoxClass.Visible = false;
@@ -90,9 +90,9 @@ namespace OOP2.Lab07 {
                 ComboBoxDetachment.Visible = false;
                 LabelDetachment.Visible = false;
             } else {
-                AddAnimalForm.LabelType.Text = "";
+                EditAnimalForm.LabelType.Text = "";
             }
-            AddAnimalForm.LabelClass.Text = AddAnimalForm.LabelDetachment.Text = "";
+            EditAnimalForm.LabelClass.Text = EditAnimalForm.LabelDetachment.Text = "";
             ComboBoxClass.SelectedIndex = -1;
             ComboBoxDetachment.SelectedIndex = -1;
         }
@@ -101,7 +101,7 @@ namespace OOP2.Lab07 {
             if (ComboBoxClass.SelectedIndex >= 0) {
                 Tree<string>[ ] types_tree = Animal.Children;
                 Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
-                AddAnimalForm.LabelClass.Text = classes_tree[ComboBoxClass.SelectedIndex].Data;
+                EditAnimalForm.LabelClass.Text = classes_tree[ComboBoxClass.SelectedIndex].Data;
                 Tree<string>[ ] detachments_tree = classes_tree[ComboBoxClass.SelectedIndex].Children;
                 if (detachments_tree.Length == 0) {
                     LabelDetachment.Visible = false;
@@ -115,17 +115,17 @@ namespace OOP2.Lab07 {
                     }
                 }
             } else {
-                AddAnimalForm.LabelClass.Text = "";
+                EditAnimalForm.LabelClass.Text = "";
             }
-            AddAnimalForm.LabelDetachment.Text = "";
+            EditAnimalForm.LabelDetachment.Text = "";
             ComboBoxDetachment.SelectedIndex = -1;
         }
 
         private void ComboBoxDetachments_SelectedIndexChanged(Object sender, EventArgs e) {
             if (ComboBoxDetachment.SelectedIndex >= 0) {
-                AddAnimalForm.LabelDetachment.Text = ComboBoxDetachment.SelectedItem.ToString( );
+                EditAnimalForm.LabelDetachment.Text = ComboBoxDetachment.SelectedItem.ToString( );
             } else {
-                AddAnimalForm.LabelDetachment.Text = "";
+                EditAnimalForm.LabelDetachment.Text = "";
             }
         }
     }

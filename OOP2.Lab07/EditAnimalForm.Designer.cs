@@ -1,5 +1,5 @@
 ﻿namespace OOP2.Lab07 {
-    partial class AddAnimalForm {
+    partial class EditAnimalForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
