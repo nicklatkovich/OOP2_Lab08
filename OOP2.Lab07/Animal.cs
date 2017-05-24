@@ -41,6 +41,7 @@ namespace OOP2.Lab07 {
 
         public Animal( ) {
             Bailee = new Person("", "");
+            Habitats = new List<Habitat>( );
         }
 
     }

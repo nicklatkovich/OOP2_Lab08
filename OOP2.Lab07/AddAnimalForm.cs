@@ -48,6 +48,26 @@ namespace OOP2.Lab07 {
         }
 
         private void ButtonConfirmAnimalAddition_Click(Object sender, EventArgs e) {
+            if (NameError) {
+                MessageBox.Show("Имя введено неверно");
+                return;
+            }
+            if (AgeError) {
+                MessageBox.Show("Возраст введён неверно");
+                return;
+            }
+            if (RBError) {
+                MessageBox.Show("Не указано, находится ли данное животное в красной книге");
+                return;
+            }
+            if (TypeError || ClassError || DetachmentError) {
+                MessageBox.Show("Тип животного указан неверно");
+                return;
+            }
+            if (Name1stError || Name2ndError) {
+                MessageBox.Show("Имя и/или фамилия ответственного лица введены неверно");
+                return;
+            }
             Program.MainForm.Animals.Add(Animal);
             Program.MainForm.RefreshZooPresenter( );
             Program.MainForm.Focus( );

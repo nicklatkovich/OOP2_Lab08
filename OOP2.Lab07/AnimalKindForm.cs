@@ -63,49 +63,70 @@ namespace OOP2.Lab07 {
             LabelClass.Visible = false;
             ComboBoxDetachment.Visible = false;
             LabelDetachment.Visible = false;
+            string type = AddAnimalForm.LabelType.Text;
+            string @class = AddAnimalForm.LabelClass.Text;
+            string detachment = AddAnimalForm.LabelDetachment.Text;
+            ComboBoxType.SelectedIndex = ComboBoxType.Items.IndexOf(type);
+            ComboBoxClass.SelectedIndex = ComboBoxClass.Items.IndexOf(@class);
+            ComboBoxDetachment.SelectedIndex = ComboBoxDetachment.Items.IndexOf(detachment);
         }
 
         private void ComboBoxType_SelectedIndexChanged(Object sender, EventArgs e) {
-            Tree<string>[ ] types_tree = Animal.Children;
-            AddAnimalForm.LabelType.Text = types_tree[ComboBoxType.SelectedIndex].Data;
-            Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
-            if (classes_tree.Length == 0) {
-                ComboBoxClass.Visible = false;
-                LabelClass.Visible = false;
-            } else {
-                ComboBoxClass.Visible = true;
-                LabelClass.Visible = true;
-                ComboBoxClass.Items.Clear( );
-                foreach (var a in classes_tree) {
-                    ComboBoxClass.Items.Add(a.Data);
+            if (ComboBoxType.SelectedIndex >= 0) {
+                Tree<string>[ ] types_tree = Animal.Children;
+                AddAnimalForm.LabelType.Text = types_tree[ComboBoxType.SelectedIndex].Data;
+                Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
+                if (classes_tree.Length == 0) {
+                    ComboBoxClass.Visible = false;
+                    LabelClass.Visible = false;
+                } else {
+                    ComboBoxClass.Visible = true;
+                    LabelClass.Visible = true;
+                    ComboBoxClass.Items.Clear( );
+                    foreach (var a in classes_tree) {
+                        ComboBoxClass.Items.Add(a.Data);
+                    }
                 }
+                ComboBoxDetachment.Visible = false;
+                LabelDetachment.Visible = false;
+            } else {
+                AddAnimalForm.LabelType.Text = "";
             }
-            ComboBoxDetachment.Visible = false;
-            LabelDetachment.Visible = false;
             AddAnimalForm.LabelClass.Text = AddAnimalForm.LabelDetachment.Text = "";
+            ComboBoxClass.SelectedIndex = -1;
+            ComboBoxDetachment.SelectedIndex = -1;
         }
 
         private void ComboBoxClasses_SelectedIndexChanged(Object sender, EventArgs e) {
-            Tree<string>[ ] types_tree = Animal.Children;
-            Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
-            AddAnimalForm.LabelClass.Text = classes_tree[ComboBoxClass.SelectedIndex].Data;
-            Tree<string>[ ] detachments_tree = classes_tree[ComboBoxClass.SelectedIndex].Children;
-            if (detachments_tree.Length == 0) {
-                LabelDetachment.Visible = false;
-                ComboBoxDetachment.Visible = false;
-            } else {
-                LabelDetachment.Visible = true;
-                ComboBoxDetachment.Visible = true;
-                ComboBoxDetachment.Items.Clear( );
-                foreach (var a in detachments_tree) {
-                    ComboBoxDetachment.Items.Add(a.Data);
+            if (ComboBoxClass.SelectedIndex >= 0) {
+                Tree<string>[ ] types_tree = Animal.Children;
+                Tree<string>[ ] classes_tree = types_tree[ComboBoxType.SelectedIndex].Children;
+                AddAnimalForm.LabelClass.Text = classes_tree[ComboBoxClass.SelectedIndex].Data;
+                Tree<string>[ ] detachments_tree = classes_tree[ComboBoxClass.SelectedIndex].Children;
+                if (detachments_tree.Length == 0) {
+                    LabelDetachment.Visible = false;
+                    ComboBoxDetachment.Visible = false;
+                } else {
+                    LabelDetachment.Visible = true;
+                    ComboBoxDetachment.Visible = true;
+                    ComboBoxDetachment.Items.Clear( );
+                    foreach (var a in detachments_tree) {
+                        ComboBoxDetachment.Items.Add(a.Data);
+                    }
                 }
+            } else {
+                AddAnimalForm.LabelClass.Text = "";
             }
+            AddAnimalForm.LabelDetachment.Text = "";
+            ComboBoxDetachment.SelectedIndex = -1;
         }
 
         private void ComboBoxDetachments_SelectedIndexChanged(Object sender, EventArgs e) {
-            AddAnimalForm.LabelDetachment.Text = ComboBoxDetachment.SelectedItem.ToString( );
-
+            if (ComboBoxDetachment.SelectedIndex >= 0) {
+                AddAnimalForm.LabelDetachment.Text = ComboBoxDetachment.SelectedItem.ToString( );
+            } else {
+                AddAnimalForm.LabelDetachment.Text = "";
+            }
         }
     }
 }
