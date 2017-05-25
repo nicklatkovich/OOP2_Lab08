@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace OOP2.Lab08 {
     [DataContract]
+    [Serializable]
     public class Animal {
 
         [DataMember]
@@ -27,6 +29,7 @@ namespace OOP2.Lab08 {
         [DataMember]
         public string Detachment;
         [DataMember]
+        [XmlArray("HabitatsList"), XmlArrayItem(typeof(Habitat), ElementName = "Habitat")]
         public List<Habitat> Habitats;
         [DataMember]
         public Person Bailee;
@@ -40,7 +43,7 @@ namespace OOP2.Lab08 {
         }
 
         public Animal( ) {
-            Bailee = new Person("", "");
+            Bailee = new Person( );
             Habitats = new List<Habitat>( );
         }
 

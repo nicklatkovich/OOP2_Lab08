@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace OOP2.Lab08 {
     public partial class MainForm : Form {
@@ -77,23 +78,35 @@ namespace OOP2.Lab08 {
         }
 
         private void SaveZoo( ) {
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
             SaveFileDialog sfd = new SaveFileDialog( );
-            sfd.Filter = "Zoo Data Base (*zdb)|*.zdb";
+            sfd.Filter = "Zoo Data Base (*zdb)|*.zdb|Zoo eXtensible Markup (*zxm)|*.zxm";
             if (sfd.ShowDialog( ) == DialogResult.OK) {
                 using (FileStream fs = new FileStream(sfd.FileName, FileMode.OpenOrCreate)) {
-                    jsonFormatter.WriteObject(fs, Animals.ToArray( ));
+                    if (sfd.FilterIndex == 0) {
+                        DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
+                        jsonFormatter.WriteObject(fs, Animals.ToArray( ));
+                    } else {
+                        XmlSerializer formatter = new XmlSerializer(typeof(Animal[ ]));
+                        formatter.Serialize(fs, Animals.ToArray( ));
+                    }
                 }
             }
         }
 
         private void BtnLoad_Click(Object sender, EventArgs e) {
-            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
             OpenFileDialog ofd = new OpenFileDialog( );
-            ofd.Filter = "Zoo Data Base (*zdb)|*.zdb";
+            ofd.Filter = "Zoo Data Base (*zdb)|*.zdb|Zoo eXtensible Markup (*zxm)|*.zxm";
             if (ofd.ShowDialog( ) == DialogResult.OK) {
-                using (FileStream fs = new FileStream(ofd.FileName, FileMode.OpenOrCreate)) {
-                    Animals = new List<Animal>((Animal[ ])jsonFormatter.ReadObject(fs));
+                if (ofd.FilterIndex == 0) {
+                    DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
+                    using (FileStream fs = new FileStream(ofd.FileName, FileMode.OpenOrCreate)) {
+                        Animals = new List<Animal>((Animal[ ])jsonFormatter.ReadObject(fs));
+                    }
+                } else {
+                    DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
+                    using (FileStream fs = new FileStream(ofd.FileName, FileMode.OpenOrCreate)) {
+                        Animals = new List<Animal>((Animal[ ])jsonFormatter.ReadObject(fs));
+                    }
                 }
             }
             RefreshZooPresenter( );

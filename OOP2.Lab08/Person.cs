@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP2.Lab08 {
+    [Serializable]
     [DataContract]
     public class Person {
 
@@ -13,6 +14,10 @@ namespace OOP2.Lab08 {
         public string FirstName;
         [DataMember]
         public string LastName;
+
+        public Person( ) : this("", "") {
+
+        }
 
         public Person(string firstName, string lastName) {
             this.FirstName = firstName;
