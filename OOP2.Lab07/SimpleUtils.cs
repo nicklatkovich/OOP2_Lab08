@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     public static class SimpleUtils {
 
         private static Random _rand = new Random( );

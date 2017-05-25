@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     public partial class EditAnimalForm : Form {
 
         public EditAnimalForm(Animal animal) {

@@ -7,8 +7,8 @@
     <ProjectGuid>{6E072DF0-5382-467B-97D7-CDD3F31ED47C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OOP2.Lab07</RootNamespace>
-    <AssemblyName>OOP2.Lab07</AssemblyName>
+    <RootNamespace>OOP2.Lab08</RootNamespace>
+    <AssemblyName>OOP2.Lab08</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -107,6 +107,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

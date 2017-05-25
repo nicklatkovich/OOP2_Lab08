@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     static class Program {
 
         public static MainForm MainForm;

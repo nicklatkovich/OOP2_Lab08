@@ -1,4 +1,4 @@
-﻿namespace OOP2.Lab07 {
+﻿namespace OOP2.Lab08 {
     partial class AnimalKindForm {
         /// <summary>
         /// Required designer variable.

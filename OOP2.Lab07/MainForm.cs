@@ -4,7 +4,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Windows.Forms;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     public partial class MainForm : Form {
         public MainForm( ) {
             InitializeComponent( );

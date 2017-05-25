@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     partial class MainForm {
         private System.ComponentModel.IContainer components = null;
 

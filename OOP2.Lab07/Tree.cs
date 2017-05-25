@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     public class Tree<T> {
 
         public T Data;

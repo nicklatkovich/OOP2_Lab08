@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     partial class HabitatsForm {
         /// <summary>
         /// Required designer variable.

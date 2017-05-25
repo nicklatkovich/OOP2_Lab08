@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP2.Lab07 {
+namespace OOP2.Lab08 {
     [DataContract]
     public class Animal {
 
