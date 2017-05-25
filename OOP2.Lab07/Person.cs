@@ -19,5 +19,9 @@ namespace OOP2.Lab07 {
             this.LastName = lastName;
         }
 
+        public override String ToString( ) {
+            return LastName + " " + FirstName;
+        }
+
     }
 }

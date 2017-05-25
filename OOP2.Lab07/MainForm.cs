@@ -10,19 +10,24 @@ namespace OOP2.Lab07 {
             InitializeComponent( );
             Load += MainForm_Load;
             ZooPresenter.Columns.Add("Animal", "Животное");
-            ZooPresenter.Columns[0].Visible = false;
+            ZooPresenter.Columns["Animal"].Visible = false;
             ZooPresenter.Columns.Add("Name", "Название");
             ZooPresenter.Columns.Add("Age", "Возраст");
             ZooPresenter.Columns.Add("RedBook", "Красная книга");
             ZooPresenter.Columns.Add("Type", "Тип");
+            ZooPresenter.Columns["Type"].Visible = false;
             ZooPresenter.Columns.Add("Class", "Класс");
+            ZooPresenter.Columns["Class"].Visible = false;
             ZooPresenter.Columns.Add("Detachment", "Отряд");
+            ZooPresenter.Columns.Add("ReceiptDate", "Дата поступления");
             ZooPresenter.Columns.Add("HabitatArea", "Ареал");
+            ZooPresenter.Columns.Add("Bailee", "Куратор");
         }
 
         public List<Animal> Animals = new List<Animal>( );
 
         private EditAnimalForm AddAnimalForm;
+        private AboutForm AboutForm = null;
 
         private void MainForm_Load(Object sender, EventArgs e) {
         }
@@ -59,13 +64,19 @@ namespace OOP2.Lab07 {
                     a.Type,
                     a.Class,
                     a.Detachment,
+                    a.ReceiptDate,
                     a.GetCommonHabitatsArea( ),
+                    a.Bailee,
                 });
             }
             ZooPresenter.ClearSelection( );
         }
 
         private void BtnSave_Click(Object sender, EventArgs e) {
+            SaveZoo( );
+        }
+
+        private void SaveZoo( ) {
             DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(Animal[ ]));
             SaveFileDialog sfd = new SaveFileDialog( );
             sfd.Filter = "Zoo Data Base (*zdb)|*.zdb";
@@ -108,6 +119,34 @@ namespace OOP2.Lab07 {
             AddAnimalForm.Show( );
             AddAnimalForm.Focus( );
             //AddAnimalForm.LabelClass.Text = AddAnimalForm.LabelType.Text = AddAnimalForm.LabelDetachment.Text = "";
+        }
+
+        private void MenuSortByDate_Click(Object sender, EventArgs e) {
+            SortBy("ReceiptDate");
+        }
+
+        private void MenuSortByBailee_Click(Object sender, EventArgs e) {
+            SortBy("Bailee");
+        }
+
+        public void SortBy(string columnName) {
+            if (ZooPresenter.SortedColumn != ZooPresenter.Columns[columnName] || ZooPresenter.SortOrder == SortOrder.Descending) {
+                ZooPresenter.Sort(ZooPresenter.Columns[columnName], System.ComponentModel.ListSortDirection.Ascending);
+            } else {
+                ZooPresenter.Sort(ZooPresenter.Columns[columnName], System.ComponentModel.ListSortDirection.Descending);
+            }
+        }
+
+        private void MenuSave_Click(Object sender, EventArgs e) {
+            SaveZoo( );
+        }
+
+        private void MenuAbout_Click(Object sender, EventArgs e) {
+            if (AboutForm == null || AboutForm.IsDisposed) {
+                AboutForm = new AboutForm( );
+            }
+            AboutForm.Show( );
+            AboutForm.Focus( );
         }
     }
 }
